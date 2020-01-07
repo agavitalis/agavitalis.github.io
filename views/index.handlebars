@@ -352,38 +352,20 @@
             </div>
          </div>
          <div class="row">
-            <div class="col-md-6">
-               <div class="item mb-40">
-                  <h4><span class="item-icon"><i class="fas fa-briefcase"></i></span>Creative Director</h4>
-                  <span class="meta">10.2017 - 09.2019</span>
-                  <h5>Freelancer</h5>
-                  <p>hasellus ipsum metus, gravida sit amet sollicitudin ac, efficitur eget risus. Curabitur commodo
-                     malesuada neque at hendrerit.</p>
+           
+             {{#each experience}}
+               <div class="col-md-6">
+                  <div class="item mb-40">
+                     <h4><span class="item-icon"><i class="fas fa-briefcase"></i></span>{{title}}
+                     </h4>
+                     <span class="meta">{{start_date}} - {{stop_date}}</span>
+                     <h5>{{roles.title}}</h5>
+                     <p>{{roles.responsibilities}}</p>
+                  </div>
                </div>
-               <div class="item mb-40">
-                  <h4><span class="item-icon"><i class="fas fa-briefcase"></i></span>Creative Director</h4>
-                  <span class="meta">09.2017 - 04.2019</span>
-                  <h5>Freelancer</h5>
-                  <p>hasellus ipsum metus, gravida sit amet sollicitudin ac, efficitur eget risus. Curabitur commodo
-                     malesuada neque at hendrerit.</p>
-               </div>
-            </div>
-            <div class="col-md-6">
-               <div class="item mb-40">
-                  <h4><span class="item-icon"><i class="fas fa-graduation-cap"></i></span>Specialization course</h4>
-                  <span class="meta">10.2018 - 09.2019</span>
-                  <h5>Freelancer</h5>
-                  <p>Phasellus ipsum metus, gravida sit amet sollicitudin ac, efficitur eget risus. Curabitur commodo
-                     malesuada neque at hendrerit.</p>
-               </div>
-               <div class="item mb-40">
-                  <h4><span class="item-icon"><i class="fas fa-graduation-cap"></i></span>Specialization course</h4>
-                  <span class="meta">09.2018 - 04.2019</span>
-                  <h5>Freelancer</h5>
-                  <p>Phasellus ipsum metus, gravida sit amet sollicitudin ac, efficitur eget risus. Curabitur commodo
-                     malesuada neque at hendrerit.</p>
-               </div>
-            </div>
+               
+            {{/each}}
+           
          </div>
       </div>
    </section>

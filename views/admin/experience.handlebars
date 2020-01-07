@@ -47,12 +47,12 @@
 
             <div class="collapse navbar-collapse" id="nav">
                 <!-- Nav-links -->
-            <ul class="navbar-nav ml-auto">
-               <li class="nav-item active"><a href="/" class="nav-link">Dashboard</a></li>
-               <li class="nav-item"><a href="/experience" class="nav-link">Experience</a></li>
-               <li class="nav-item"><a href="/project" class="nav-link">Projects</a></li>
-               <li class="nav-item"><a href="/contact" class="nav-link">Contacts</a></li>
-            </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="/" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="/experience" class="nav-link">Experience</a></li>
+                    <li class="nav-item"><a href="/project" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="/contact" class="nav-link">Contacts</a></li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -72,47 +72,46 @@
             </div>
             <div class="row block-9">
                 <div class="col-md-5">
-                    <form action="#" class="contact-form">
+                    <form action="/experience" method="post" class="contact-form">
 
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Job Title">
+                            <input type="text" class="form-control" placeholder="Job Title" name="title">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Duration">
+                            <input type="text" class="form-control" placeholder="Start Date" name="start_date">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Roles Title">
+                            <input type="text" class="form-control" placeholder="Stop Date" name="stop_date">
                         </div>
                         <div class="form-group">
-                            <textarea name="message" id="message" cols="30" rows="4" class="form-control"
-                                placeholder="Role Description"></textarea>
+                            <input type="text" class="form-control" placeholder="Roles Title" name="roles_title">
                         </div>
                         <div class="form-group">
-                            <input type="Register" value="Send Message" class="btn btn-primary py-3 px-5">
+                            <textarea  cols="30" rows="4" class="form-control"
+                                placeholder="Role Description"  name="roles_responsibilities"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
                         </div>
                     </form>
                 </div>
                 <div class="col-md-7">
                     <div class="bg-dots" id="resume">
                         <div class="col-md-12">
-                            <div class="item mb-40">
-                                <h4><span class="item-icon"><i class="fas fa-briefcase"></i></span>Creative Director
-                                </h4>
-                                <span class="meta">10.2017 - 09.2019</span>
-                                <h5>Freelancer</h5>
-                                <p>hasellus ipsum metus, gravida sit amet sollicitudin ac, efficitur eget risus.
-                                    Curabitur commodo
-                                    malesuada neque at hendrerit.</p>
-                            </div>
-                            <div class="item mb-40">
-                                <h4><span class="item-icon"><i class="fas fa-briefcase"></i></span>Creative Director
-                                </h4>
-                                <span class="meta">09.2017 - 04.2019</span>
-                                <h5>Freelancer</h5>
-                                <p>hasellus ipsum metus, gravida sit amet sollicitudin ac, efficitur eget risus.
-                                    Curabitur commodo
-                                    malesuada neque at hendrerit.</p>
-                            </div>
+                            {{#each experience}}
+                                <div class="item mb-40">
+                                    <h4><span class="item-icon"><i class="fas fa-briefcase"></i></span>{{title}}
+                                    </h4>
+                                    <span class="meta">{{start_date}} - {{stop_date}}</span>
+                                    <h5>{{roles.title}}</h5>
+                                    <p>{{roles.responsibilities}}</p>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary">Edit</button>
+                                    <button class="btn btn-danger">Delete</button>
+                                </div>
+                            {{/each}}
+                           
                         </div>
                     </div>
                 </div>

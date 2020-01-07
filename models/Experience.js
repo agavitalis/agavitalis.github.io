@@ -11,7 +11,7 @@ const experienceSchema = new mongoose.Schema({
     },
     roles: {
         title: String,
-        responsibilities:[String]
+        responsibilities:String
     },
    
 })
