@@ -7,7 +7,8 @@ class HomeController  {
 
   static async home(req, res, error) {
 
-    Experience.find({}).exec()
+    Experience.find({}).sort({ createdAt: -1 }).exec()
+
     .then(function(experience){ 
       res.render('index', {layout: false,experience});
     })
@@ -20,8 +21,11 @@ class HomeController  {
   static async details(req, res, error) {
     res.render('details', {layout:false});
   }
-  
 
+  static async download(req, res, error) {
+    res.download('views/public/VitalisCV.pdf');
+  }
+  
 }
 
 module.exports = HomeController;

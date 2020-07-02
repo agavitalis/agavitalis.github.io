@@ -14,6 +14,6 @@ const experienceSchema = new mongoose.Schema({
         responsibilities:String
     },
    
-})
+}, { timestamps: true })
 
 module.exports = mongoose.model("experience", experienceSchema)

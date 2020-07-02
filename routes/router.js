@@ -10,10 +10,11 @@ const ProjectController = require('../controllers/ProjectController');
 //I captured the admin route here
 router.use('/dashboard',DashboardController.dashboard)
 router.use('/experience',ExperienceController.experience)
-router.use('/project',ProjectController.projects)
+router.use('/project',ProjectController.project)
 
 //I captured the landing routes here
 router.use('/details',HomeController.details)
+router.use('/download',HomeController.download)
 router.use('/',HomeController.home)
 
 //export the routes to index

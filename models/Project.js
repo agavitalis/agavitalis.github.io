@@ -10,8 +10,10 @@ const projectSchema = new Schema({
     picture: {
         type: String,
     },
-    category:{type: Schema.Types.ObjectId, ref: 'Category'}
+    category:{
+        type: String
+    }
   
-})
+}, { timestamps: true })
 
 module.exports = mongoose.model("projects", projectSchema)
